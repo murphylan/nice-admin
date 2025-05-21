@@ -1,7 +1,5 @@
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { type DefaultSession, type NextAuthConfig } from "next-auth";
-import DiscordProvider from "next-auth/providers/discord";
-
 import { db } from "@/server/db";
 import {
   accounts,
@@ -9,6 +7,7 @@ import {
   users,
   verificationTokens,
 } from "@/server/db/schema";
+import GitHub from "next-auth/providers/github";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -38,7 +37,18 @@ declare module "next-auth" {
  */
 export const authConfig = {
   providers: [
-    DiscordProvider,
+    GitHub({
+      clientId: process.env.AUTH_GITHUB_ID,
+      clientSecret: process.env.AUTH_GITHUB_SECRET,
+      authorization: {
+        url: "https://github.ibm.com/login/oauth/authorize",
+        params: {
+          scope: "read:user user:email", // 根据你的需求调整 scope
+        },
+      },
+      token: "https://github.ibm.com/login/oauth/access_token",
+      userinfo: "https://github.ibm.com/api/v3/user",
+    }),
     /**
      * ...add more providers here.
      *
