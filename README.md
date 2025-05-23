@@ -1,6 +1,6 @@
 # Create T3 App
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `pnpm dlx create-t3-app@latest --CI --appRouter --nextAuth --tailwind --drizzle --dbProvider postgres`.
 
 ## What's next? How do I make an app with this?
 
