@@ -1,17 +1,31 @@
-import {
-  SidebarProvider,
-  SidebarTrigger,
-  Sidebar,
-} from "@/components/ui/sidebar";
+import AppSidebar from "@/components/app-sidebar";
+import Header from "@/components/header";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import type { Metadata } from "next";
+import { cookies } from "next/headers";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: "Next Shadcn Dashboard Starter",
+  description: "Basic dashboard with Next.js and Shadcn",
+};
+
+export default async function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  // Persisting the sidebar state in the cookie.
+  const cookieStore = await cookies();
+  const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
   return (
-    <SidebarProvider>
-      <Sidebar />
-      <main>
-        <SidebarTrigger />
+    <SidebarProvider defaultOpen={defaultOpen}>
+      <AppSidebar />
+      <SidebarInset>
+        <Header />
+        {/* page main content */}
         {children}
-      </main>
+        {/* page main content ends */}
+      </SidebarInset>
     </SidebarProvider>
   );
 }

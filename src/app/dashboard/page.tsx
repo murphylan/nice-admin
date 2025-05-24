@@ -1,4 +1,4 @@
-import { getCurrentUser } from "@/hooks/get-current-user";
+import { getCurrentUser } from "@/server/auth/get-current-user";
 import { redirect } from "next/navigation";
 
 export default async function Dashboard() {
