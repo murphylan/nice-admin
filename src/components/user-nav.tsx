@@ -18,7 +18,7 @@ export function UserNav() {
   const { data: session, status } = useSession();
   const user = session?.user;
 
-  console.log(user);
+  console.log(JSON.stringify(user, null, 2));
 
   useEffect(() => {
     getSession(); // 刷新session

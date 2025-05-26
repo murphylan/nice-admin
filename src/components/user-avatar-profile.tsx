@@ -16,10 +16,12 @@ export function UserAvatarProfile({
   user,
 }: UserAvatarProfileProps) {
   console.log("user.image", user?.image);
+  const imgPath =
+    "https://w3-unified-profile-api.ibm.com/v3/image/" + user?.email;
   return (
     <div className="flex items-center gap-2">
       <Avatar className={className}>
-        <AvatarImage src={user?.image || ""} alt={user?.name || ""} />
+        <AvatarImage src={imgPath || ""} alt={user?.name || ""} />
         <AvatarFallback className="rounded-lg">
           {user?.name?.slice(0, 2)?.toUpperCase() || "CN"}
         </AvatarFallback>

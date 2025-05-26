@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 export default async function Dashboard() {
   const user = await getCurrentUser();
 
-  console.log("user", user);
+  console.log(JSON.stringify(user, null, 2));
 
   if (!user) {
     return redirect("/auth/sign-in");
