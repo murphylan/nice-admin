@@ -18,8 +18,6 @@ export function UserNav() {
   const { data: session, status } = useSession();
   const user = session?.user;
 
-  console.log(JSON.stringify(user, null, 2));
-
   useEffect(() => {
     getSession(); // 刷新session
   }, [status]);
@@ -58,7 +56,7 @@ export function UserNav() {
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <button onClick={() => signOut()}>Sign out</button>
+            <button onClick={() => signOut({ callbackUrl: "/" })}>Sign out</button>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
