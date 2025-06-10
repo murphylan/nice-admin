@@ -42,13 +42,13 @@ export const authConfig = {
       clientId: process.env.AUTH_GITHUB_ID,
       clientSecret: process.env.AUTH_GITHUB_SECRET,
       authorization: {
-        url: "https://github.ibm.com/login/oauth/authorize",
+        url: "https://github.com/login/oauth/authorize",
         params: {
           scope: "read:user user:email", // 根据你的需求调整 scope
         },
       },
-      token: "https://github.ibm.com/login/oauth/access_token",
-      userinfo: "https://github.ibm.com/api/v3/user",
+      token: "https://github.com/login/oauth/access_token",
+      userinfo: "https://api.github.com/user",
     }),
     /**
      * ...add more providers here.

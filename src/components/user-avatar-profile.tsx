@@ -16,8 +16,7 @@ export function UserAvatarProfile({
   user,
 }: UserAvatarProfileProps) {
   console.log("user.image", user?.image);
-  const imgPath =
-    "https://w3-unified-profile-api.ibm.com/v3/image/" + user?.email;
+  const imgPath = user?.image;
   return (
     <div className="flex items-center gap-2">
       <Avatar className={className}>
