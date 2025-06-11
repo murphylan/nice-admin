@@ -1,4 +1,4 @@
-import { PieGraph } from "./_components/PieGraph";
+import { PieGraph } from "./_components/pie-graph";
 
 export default async function Stats() {
   const delay = (ms: number) =>

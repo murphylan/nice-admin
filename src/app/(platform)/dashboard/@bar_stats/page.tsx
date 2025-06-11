@@ -1,4 +1,4 @@
-import { BarGraph } from "./_components/BarGraph";
+import { BarGraph } from "./_components/bar-graph";
 
 export default async function BarStats() {
   const delay = (ms: number) =>

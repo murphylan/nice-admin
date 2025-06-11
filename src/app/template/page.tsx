@@ -21,7 +21,7 @@ const Template = () => {
             description="Manage products (Server side table functionalities.)"
           />
           <Link
-            href="/dashboard/product/new"
+            href="/product/new"
             className={cn(buttonVariants(), "text-xs md:text-sm")}
           >
             <IconPlus className="mr-2 h-4 w-4" /> Add New

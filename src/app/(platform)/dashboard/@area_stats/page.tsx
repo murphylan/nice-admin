@@ -1,4 +1,4 @@
-import { AreaGraph } from "./_components/AreaGraph";
+import { AreaGraph } from "./_components/area-graph";
 
 export default async function AreaStats() {
   const delay = (ms: number) =>

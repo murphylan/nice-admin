@@ -1,4 +1,4 @@
-import { RecentSales } from "./_components/RecentSales";
+import { RecentSales } from "./_components/recent-sales";
 
 export default async function Sales() {
   const delay = (ms: number) =>
