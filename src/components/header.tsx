@@ -3,6 +3,7 @@ import { SidebarTrigger } from "./ui/sidebar";
 import { Separator } from "./ui/separator";
 import { Breadcrumbs } from "./breadcrumbs";
 import { UserNav } from "./user-nav";
+import { ModeToggle } from "./layout/ThemeToggle/theme-toggle";
 
 export default function Header() {
   return (
@@ -17,8 +18,8 @@ export default function Header() {
         {/* <CtaGithub /> */}
         <div className="hidden md:flex">{/* <SearchInput /> */}</div>
         <UserNav />
-        {/* <ModeToggle />
-        <ThemeSelector /> */}
+        <ModeToggle />
+        {/* <ThemeSelector /> */}
       </div>
     </header>
   );
