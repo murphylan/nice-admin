@@ -1,10 +1,10 @@
 import AppSidebar from "@/components/app-sidebar";
 import Header from "@/components/header";
+import Providers from "@/components/layout/providers";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import type { Metadata } from "next";
-import { SessionProvider } from "next-auth/react";
-import { cookies } from "next/headers";
 import { getCurrentUser } from "@/server/auth/get-current-user";
+import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default async function DashboardLayout({
   const cookieStore = await cookies();
   const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
   return (
-    <SessionProvider>
+    <Providers activeThemeValue="blue">
       <SidebarProvider defaultOpen={defaultOpen}>
         <AppSidebar />
         <SidebarInset>
@@ -36,6 +36,6 @@ export default async function DashboardLayout({
           {/* page main content ends */}
         </SidebarInset>
       </SidebarProvider>
-    </SessionProvider>
+    </Providers>
   );
 }
