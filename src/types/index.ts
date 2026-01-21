@@ -1,35 +1,91 @@
-import { Icons } from "@/components/icons";
+// User types
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: string;
+  tenantId: string;
+  avatar?: string;
+  status: 'active' | 'inactive';
+  createdAt: Date;
+  updatedAt: Date;
+}
 
-export interface NavItem {
-  title: string;
-  url: string;
-  disabled?: boolean;
-  external?: boolean;
-  shortcut?: [string, string];
-  icon?: keyof typeof Icons;
-  label?: string;
+// Tenant types
+export interface Tenant {
+  id: string;
+  name: string;
+  code: string;
+  status: 'active' | 'inactive';
   description?: string;
-  isActive?: boolean;
-  items?: NavItem[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export interface NavItemWithChildren extends NavItem {
-  items: NavItemWithChildren[];
+// Role types
+export interface Role {
+  id: string;
+  name: string;
+  code: string;
+  description?: string;
+  permissions: string[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export interface NavItemWithOptionalChildren extends NavItem {
-  items?: NavItemWithChildren[];
+// Menu types
+export interface MenuItem {
+  id: string;
+  name: string;
+  path: string;
+  icon?: string;
+  parentId?: string;
+  order: number;
+  visible: boolean;
+  permissions: string[];
+  children?: MenuItem[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export interface FooterItem {
-  title: string;
-  items: {
-    title: string;
-    href: string;
-    external?: boolean;
-  }[];
+// API Config types
+export interface ApiConfig {
+  id: string;
+  name: string;
+  path: string;
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+  description?: string;
+  permissions: string[];
+  status: 'active' | 'inactive';
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export type MainNavItem = NavItemWithOptionalChildren;
+// Operation Log types
+export interface OperationLog {
+  id: string;
+  userId: string;
+  userName: string;
+  action: string;
+  module: string;
+  description: string;
+  ip: string;
+  userAgent: string;
+  requestData?: string;
+  responseData?: string;
+  status: 'success' | 'error';
+  createdAt: Date;
+}
 
-export type SidebarNavItem = NavItemWithChildren;
+// Table types
+export interface PaginationState {
+  pageIndex: number;
+  pageSize: number;
+}
+
+export interface TableResponse<T> {
+  data: T[];
+  total: number;
+  pageIndex: number;
+  pageSize: number;
+}

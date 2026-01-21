@@ -1,47 +1,124 @@
-# Create T3 App
+# Nice Admin
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `pnpm dlx create-t3-app@latest --CI --appRouter --nextAuth --tailwind --drizzle --dbProvider postgres`.
+一个现代化的企业级管理后台系统，基于 Next.js 16 构建。
 
-## What's next? How do I make an app with this?
+![Next.js](https://img.shields.io/badge/Next.js-16-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC)
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## ✨ 特性
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- 🚀 **Next.js 16** - 最新的 React 框架，支持 App Router 和 Server Actions
+- 🔐 **NextAuth.js** - 完整的身份认证解决方案
+- 🎨 **Tailwind CSS v4** - 原子化 CSS 框架
+- 🧩 **Shadcn-ui** - 精美的 UI 组件库
+- 📊 **TanStack Table** - 强大的表格解决方案
+- 🔍 **TanStack Query** - 数据获取和缓存管理
+- 📝 **Formik + Zod** - 表单处理和验证
+- 🗂️ **Zustand** - 轻量级状态管理
+- ⌨️ **kbar** - Command+K 命令面板
+- 🔗 **nuqs** - URL 搜索参数状态管理
 
-## Overview
+## 🚀 快速开始
 
-This is a starter template using the following stack:
+### 环境要求
 
-- 🛠️ CLI - [create-t3-app](https://create.t3.gg/en/installation)
-- ⚛️ Framework - [Next.js 15](https://nextjs.org)
-- 📝 Language - [TypeScript](https://www.typescriptlang.org)
-- 🎨 Styling - [Tailwind CSS v4](https://tailwindcss.com)
-- 🧩 Components - [Shadcn-ui](https://ui.shadcn.com)
-- ✅ Schema Validations - [Zod](https://zod.dev)
-- 🗂️ State Management - [Zustand](https://zustand-demo.pmnd.rs)
-- 🔗 Search params state manager - [Nuqs](https://nuqs.47ng.com/)
-- 🔌 API 
-    - [ ] [tRPC](https://trpc.io/docs/concepts)
-    - [x] [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
-- 🔐 Auth - [NextAuth.js](https://next-auth.js.org/getting-started/client#sessionprovider)
-- 📊 Tables - [Tanstack Data Tables](https://ui.shadcn.com/docs/components/data-table) • [Dice UI](https://www.diceui.com/docs/components/data-table)
-- 🔍 Query - [Tanstack Query](https://tanstack.com/query/v4/)
-- 📝 Forms - [React Hook Form](https://ui.shadcn.com/docs/components/form)
-- ⌨️ Command+k interface - [kbar](https://kbar.vercel.app/)
-- 🧹 Linting - [ESLint](https://eslint.org)
-- 🪝 Pre-commit Hooks - [Husky](https://typicode.github.io/husky/)
-- 🎯 Formatting - [Prettier](https://prettier.io)
-- 🗄️ DataBase - [DBngin](https://dbngin.com/)
+- Node.js 18+
+- pnpm 8+
 
-## Learn More
+### 安装
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+```bash
+# 克隆项目
+git clone <repository-url>
+cd nice-admin
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+# 安装依赖
+pnpm install
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+# 启动开发服务器
+pnpm dev
+```
 
-## How do I Set up in local?
+访问 [http://localhost:3000](http://localhost:3000) 查看应用。
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+### 演示账号
+
+| 邮箱              | 密码     | 角色       |
+| ----------------- | -------- | ---------- |
+| admin@example.com | admin123 | 系统管理员 |
+| user@example.com  | user123  | 普通用户   |
+
+## 📦 项目结构
+
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── api/               # API 路由
+│   ├── dashboard/         # 管理后台页面
+│   └── login/             # 登录页面
+├── components/            # React 组件
+│   ├── data-table/       # 数据表格组件
+│   ├── layout/           # 布局组件
+│   └── ui/               # UI 基础组件
+├── hooks/                 # 自定义 Hooks
+├── lib/                   # 工具函数和配置
+├── stores/                # Zustand 状态管理
+└── types/                 # TypeScript 类型定义
+```
+
+## 🔧 功能模块
+
+### 1. 系统基础功能
+
+- ✅ 用户登录/登出
+- ✅ 密码管理（修改密码）
+- ✅ 操作日志（审计追踪）
+
+### 2. 用户与权限管理
+
+- ✅ 租户管理（多租户支持）
+- ✅ 账号管理（用户 CRUD）
+- ✅ 角色管理（RBAC 权限控制）
+
+### 3. 系统配置
+
+- ✅ 菜单管理（动态菜单配置）
+- ✅ 接口配置（API 权限管理）
+
+## 🛠️ 开发工具
+
+- **ESLint** - 代码质量检查
+- **Prettier** - 代码格式化
+- **Husky** - Git 钩子
+- **lint-staged** - 暂存文件检查
+
+## 📜 可用脚本
+
+```bash
+# 开发模式
+pnpm dev
+
+# 构建生产版本
+pnpm build
+
+# 启动生产服务器
+pnpm start
+
+# 代码检查
+pnpm lint
+
+# 代码格式化
+pnpm format
+```
+
+## 🎨 主题定制
+
+项目支持深色/浅色主题切换，可以通过以下方式自定义主题：
+
+1. 修改 `src/app/globals.css` 中的 CSS 变量
+2. 通过 Tailwind 配置扩展颜色
+
+## 📄 许可证
+
+MIT License
