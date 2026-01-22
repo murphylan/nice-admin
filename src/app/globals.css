@@ -9,6 +9,16 @@
  */
 
 @theme {
+  /* 
+   * Font Family - 思源黑体
+   * 来源: https://github.com/jaywcjlove/free-font
+   * 协议: OFL-1.1 (开源免费商用)
+   * 
+   * 通过 next/font/local 加载，使用 CSS 变量 --font-siyuan
+   */
+  --font-sans: var(--font-siyuan), -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
   /* Spacing */
   --spacing-18: 4.5rem;
   --spacing-88: 22rem;

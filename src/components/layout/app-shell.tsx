@@ -66,8 +66,8 @@ export function AppShell({ children, user }: AppShellProps) {
         className={cn(
           'main-content transition-all duration-300',
           sidebarCollapsed
-            ? 'lg:pl-[var(--sidebar-collapsed-width)]'
-            : 'lg:pl-[var(--sidebar-width)]'
+            ? 'lg:pl-(--sidebar-collapsed-width)'
+            : 'lg:pl-(--sidebar-width)'
         )}
       >
         <TopNav
