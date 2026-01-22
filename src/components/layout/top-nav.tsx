@@ -63,21 +63,18 @@ export function TopNav({ className, user, sidebarCollapsed }: TopNavProps) {
   return (
     <header
       className={cn(
-        'sticky top-0 z-30 flex h-14 items-center border-b bg-[var(--header-background)] transition-all duration-300',
-        sidebarCollapsed
-          ? 'pl-[calc(var(--sidebar-collapsed-width)+1rem)]'
-          : 'pl-[calc(var(--sidebar-width)+1rem)]',
-        'pr-4 lg:pr-6',
+        'sticky top-0 z-30 flex h-14 items-center border-b bg-(--header-background) transition-all duration-300',
+        'px-4 lg:px-6',
         className
       )}
     >
-      {/* Left Section - Breadcrumb or Title */}
-      <div className="flex flex-1 items-center gap-4">
+      {/* Left Section - Search */}
+      <div className="flex items-center gap-4">
         {/* Search Button */}
         <Button
           variant="outline"
           size="sm"
-          className="hidden w-64 justify-start gap-2 text-gray-500 lg:flex"
+          className="hidden w-lg justify-start gap-2 text-gray-500 lg:flex"
           onClick={() => query.toggle()}
         >
           <Search className="h-4 w-4" />
@@ -97,6 +94,9 @@ export function TopNav({ className, user, sidebarCollapsed }: TopNavProps) {
           <Search className="h-5 w-5" />
         </Button>
       </div>
+
+      {/* Spacer */}
+      <div className="flex-1" />
 
       {/* Right Section - Actions */}
       <div className="flex items-center gap-1">

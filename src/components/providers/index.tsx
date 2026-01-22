@@ -38,6 +38,7 @@ function RenderResults() {
   return (
     <KBarResults
       items={results}
+      maxHeight={384}
       onRender={({ item, active }) =>
         typeof item === 'string' ? (
           <div className="px-4 py-2 text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">
@@ -87,7 +88,7 @@ function RenderResults() {
 function CommandPalette() {
   return (
     <KBarPortal>
-      <KBarPositioner className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm">
+      <KBarPositioner className="fixed inset-0 z-100 bg-black/50 backdrop-blur-sm">
         <KBarAnimator className="w-full max-w-xl overflow-hidden rounded-xl border border-gray-200 bg-white shadow-2xl dark:border-gray-800 dark:bg-gray-900">
           <div className="flex items-center gap-3 border-b border-gray-200 px-4 dark:border-gray-800">
             <Search className="h-4 w-4 text-gray-400" />
@@ -96,7 +97,7 @@ function CommandPalette() {
               placeholder="搜索命令..."
             />
           </div>
-          <div className="max-h-96 overflow-y-auto py-2">
+          <div className="py-2">
             <RenderResults />
           </div>
           <div className="flex items-center justify-between border-t border-gray-200 px-4 py-2 text-xs text-gray-500 dark:border-gray-800 dark:text-gray-400">
